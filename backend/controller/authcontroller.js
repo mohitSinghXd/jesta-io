@@ -24,16 +24,13 @@ export const signupmannual = async(req ,res)=>{
 
 
 export const signupwithgoogle = (req  , res)=>{ 
-    res.redirect("https://accounts.google.com/o/oauth2/auth?client_id=919674238186-k059l2q0d2derugorsd3ugpv5b1lr2cf.apps.googleusercontent.com&redirect_uri=http://localhost:9000/api/auth/googlesignup/callback&response_type=code&scope=profile email")
+    res.redirect(`https://accounts.google.com/o/oauth2/auth?client_id=${process.env.client_id}&redirect_uri=http://localhost:9000/api/auth/googlesignup/callback&response_type=code&scope=profile email`)
 
 } 
 
 export const handlecallback = async(req , res)=>{ 
     try {
-         const code  = req.query.code ;  
-         console.log(code );
- 
-         console.log("flag2");
+         const code  = req.query.code ;  ;
          const response1 = await fetch("https://oauth2.googleapis.com/token" , {
             method : "POST" ,  
             headers :{
@@ -62,7 +59,7 @@ const access_token = actualtoken.access_token ;
            const token = generateaccesstoken(newuser._id) ; 
         res.cookie("token", token, {
     httpOnly: true,
-    secure: false, // localhost pe false
+    secure: false, 
     maxAge:7 * 24 *60 * 1000
 })
            res.redirect("http://localhost:5173/mainpage")
