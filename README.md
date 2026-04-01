@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Jesta-O 
 
 **Jesta-O** is a full-stack web application that allows users to generate AI-powered images from text prompts. It leverages the HuggingFace Inference API to turn creative descriptions into stunning visuals — right in the browser.
@@ -108,5 +107,3 @@ Pull requests are welcome! For major changes, please open an issue first.
 
 [MIT](LICENSE)
 =======
-# Jesta-o
->>>>>>> ba8f310e5eaeed35e1c0e41a8ccfda6bf411eb4a
